@@ -1,0 +1,18 @@
+{
+    "name": "gurpreetkaur/default",
+    "authors": [
+        {
+            "name": "Gurpreet Kaur",
+            "email": "gurpreet@smooth.tech"
+        }
+    ],
+    "autoload": {
+        "psr-4": {
+            "": "default"
+        }
+    },
+    "require": {
+        "php": ">=7.1",
+        "twig/twig": "^3.1"
+    }
+}

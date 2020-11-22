@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+	<table style="background-color: #ffffff; filter: alpha(opacity=40); opacity: 0.95;border:1px black solid;">
+		<tr>	
+			<th width="500">Appliance Name</th>
+			<th>Price</th>
+		</tr>
+		{% for word in data %}
+			<tr>
+				<td><b>{{ word.name }}</b>
+					{% for items in word.controllers %}
+						{% if items is not empty %}
+						<table>
+							<tr>
+								<td> - {{ items.type }} Controller</td>
+							</tr>
+						</table>
+						{% endif %}
+					{% endfor %}
+				</td>
+        		<td><b>$ {{ word.price }}</b>
+					{% for items in word.controllers %}
+					{% if items is not empty %}
+						<table>
+							<tr>
+								<td>$ {{ items.price }}</td>
+							</tr>
+						</table>
+					{% endif %}
+					{% endfor %}
+				</td>
+        	</tr>
+			<tr>
+				<td>  </td>
+			</tr>
+    	{% endfor %}
+    	<tr style="outline: thin solid">
+    		<td><b>Total Price</b></td>
+    		<td><b style="color: red">$ {{ total_price }}</b></td>
+    	</tr>
+	</table>
+</body>
+</html>
